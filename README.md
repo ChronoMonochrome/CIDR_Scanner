@@ -1,6 +1,6 @@
 # Network Scanner Tools
 
-A collection of high-performance network scanning and diagnostic utilities written in C. These tools utilize recursive bisection and multithreaded linear scanning to identify active hosts via ICMP and DNS protocols.
+A collection of network scanning and diagnostic utilities written in C. These tools utilize recursive bisection and multithreaded linear scanning to identify active hosts via ICMP and DNS protocols.
 
 ## Tools Overview
 
@@ -8,7 +8,7 @@ A collection of high-performance network scanning and diagnostic utilities writt
 
 An advanced ICMP (Ping) scanner designed for massive IP ranges. It uses a recursive bisection algorithm to skip empty network blocks quickly and supports a resume feature for long-running scans.
 
--   **Key Feature**: Traversal Index. It assigns a unique logical ID to every possible probe in the scan tree, allowing you to stop and resume a scan with 100% consistency.
+-   **Key Feature**: Traversal Index. It assigns a unique logical ID to every possible probe in the scan tree, allowing you to stop and resume a scan.
     
 -   **Usage**: `sudo ./bisect_ping [OPTIONS] <CIDR>`
     
@@ -25,8 +25,6 @@ An advanced ICMP (Ping) scanner designed for massive IP ranges. It uses a recurs
 
 A DNS-based network discovery tool. It probes IP ranges by sending DNS queries (Google.com A-record requests) to identify open recursive resolvers or active DNS servers.
 
--   **Key Feature**: Hybrid Mode. Supports both the fast recursive bisection algorithm and a standard multithreaded linear scan.
-    
 -   **Usage**: `./dns_bisect [OPTIONS] <CIDR>`
     
 -   **Flags**:
